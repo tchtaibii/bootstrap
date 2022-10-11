@@ -71,15 +71,25 @@ li {
     list-style-type: none;
 }
 
-ul li:hover:before {
+ul li::before {
     content: "";
     position: absolute;
     bottom: -4px;
     background: #FA47D8;
-    width: 30px;
+    width: 0px;
     height: 1px;
     /* border-radius: 100%; */
     left: calc(50% - 15px);
+    border-radius: 5px;
+    transition: width 0.5s;
+}
+
+ul li:hover:before {
+    width: 30px;
+}
+.animate.left.move {
+    left: 100%; 
+    transform: translate(-100%, 0);
 }
 
 li a{
